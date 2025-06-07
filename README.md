@@ -1,30 +1,65 @@
-﻿# Secure Web Application
+#  SecureApp - Secure Authentication Web App
 
-## Security Measures Implemented
+## 📌 Project Description
 
-### Authentication
-- JWT with 1-hour expiry
-- BCrypt password hashing
-- AES encryption for sensitive data
+SecureApp is a lightweight ASP.NET Core web application focused on demonstrating secure login and registration mechanisms. It is designed to follow best security practices by implementing encryption, hashing, secure token handling, and threat modeling techniques.
 
-### Headers
-- CSP, X-Frame-Options, XSS Protection
-- HSTS (via HTTPS)
+---
 
-### Validation
-- Input validation on all endpoints
-- Output encoding
+## 🛠️ Tech Stack
 
-## Deployment
+- **Frontend:** Minimal Razor Pages / ASP.NET Core Views
+- **Backend:** ASP.NET Core (C#)
+- **Authentication:** 
+  - AES Encryption (for usernames)
+  - BCrypt Password Hashing
+  - JWT for secure session handling
+- **Storage:** In-memory user store (no database)
 
-1. Clone repository
-2. Set environment variables:
-   - `JWT_SECRET` - 32+ character secret
-   - `DB_CONNECTION` - Database connection string
-3. Run `dotnet run`
+---
 
-## Threat Model
-See [docs/STRIDE_Threat_Model.md](docs/STRIDE_Threat_Model.md)
+## ⚙️ Setup Instructions
 
-## Risk Assessment
-See [docs/DREAD_Risk_Assessment.md](docs/DREAD_Risk_Assessment.md)
+### Prerequisites
+
+- [.NET SDK 7.0+](https://dotnet.microsoft.com/en-us/download)
+- Git
+- Visual Studio or VS Code
+
+
+cd SecureApp
+dotnet restore
+dotnet build
+dotnet run
+-------------------------------------------------------------------------------------------- 
+Security Measures Implemented
+•	AES-256 Encryption: Used to encrypt usernames before storing them.
+•	BCrypt Hashing: Secure password hashing with salting.
+•	JWT Tokens: Tokens generated for authenticated sessions with proper claims.
+•	HTTPS Only: Enforced secure transport.
+•	STRIDE Threat Modeling: Full analysis using Microsoft Threat Modeling Tool.
+•	No SQL Injection risk: No database layer used; logic secured against code injection.
+•	Authentication & Authorization: Multi-Factor Authentication (MFA/2FA):Method: Implemented TOTP (Time-Based One-Time Password) 
+•	headers using middleware 
+----------------------------------------------------------------------------------------------------- 
+Threat Modeling (STRIDE) & DREAD Documentation
+•	STRIDE model created using Microsoft Threat Modeling Tool.
+•	The .htm report file is included in the /docs folder.
+•	Major threats identified and mitigated:
+o	Elevation of privilege
+o	Information disclosure
+o	Tampering
+o	Spoofing
+•	DREAD ratings are recorded within the threat report.
+•	Example mitigations include:
+o	Input validation
+o	JWT expiration
+o	Logging (repudiation protection)
+--------------------------------------------------------------------- 
+Security Scanning Tools Used
+•	GitHub CodeQL: Static analysis for C# (CI/CD integrated)
+•	Snyk CLI : For dependency vulnerability scanning
+------------------------------------------------ 
+Deployment
+This project is hosted publicly on GitHub under this repository:
+🔗 
