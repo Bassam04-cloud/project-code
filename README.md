@@ -33,6 +33,7 @@ dotnet build
 dotnet run
 -------------------------------------------------------------------------------------------- 
 Security Measures Implemented
+-----------------------------------------------------------------------------------
 •	AES-256 Encryption: Used to encrypt usernames before storing them.
 •	BCrypt Hashing: Secure password hashing with salting.
 •	JWT Tokens: Tokens generated for authenticated sessions with proper claims.
@@ -46,9 +47,9 @@ Threat Modeling (STRIDE) & DREAD Documentation
 -------------------------------------------------------------------------------------------------
 
 •	STRIDE model created using Microsoft Threat Modeling Tool.
-•	The .htm report file is included in the /docs folder.
+•	The .htm report file is included in the ((/docs folder)).
 •	Major threats identified and mitigated:
-o	Elevation of privilege
+o	**Elevation of privilege
 o	Information disclosure
 o	Tampering
 o	Spoofing
