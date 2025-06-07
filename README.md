@@ -43,6 +43,8 @@ Security Measures Implemented
 •	headers using middleware 
 ----------------------------------------------------------------------------------------------------- 
 Threat Modeling (STRIDE) & DREAD Documentation
+-------------------------------------------------------------------------------------------------
+
 •	STRIDE model created using Microsoft Threat Modeling Tool.
 •	The .htm report file is included in the /docs folder.
 •	Major threats identified and mitigated:
@@ -62,4 +64,4 @@ Security Scanning Tools Used
 ------------------------------------------------ 
 Deployment
 This project is hosted publicly on GitHub under this repository:
-🔗 
+🔗 https://github.com/Bassam04-cloud/project-code
